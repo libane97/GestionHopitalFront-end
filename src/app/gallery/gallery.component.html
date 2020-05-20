@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">Gallary</div>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Search">Search</label>
+                        <input type="text" name="search" id="search" ngModel class="form-control" placeholder="Veuillez chercher vos photo" required>
+                    </div>
+                    <div class="my-1">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

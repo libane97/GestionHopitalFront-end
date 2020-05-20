@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">Ajouter des commentaires</div>
+        <div class="card-body">
+            <ul>
+                <li>Nom: <strong>{{info.nom}}</strong></li>
+                <li>Prenom: <strong>{{info.email}}</strong></li>
+                <li>Telphone: <strong>{{info.tel}}</strong></li>
+            </ul>
+            <div>
+                <form #f="ngForm" (ngSubmit)="addcommentaire(f.value)">
+                    <div class="form-group">
+                        <label form>Commentaire</label>
+                        <input name="message" ngModel type="text" class="form-control" required [(ngModel)]="commentaire.message">
+                        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Ajouter un commentaire</button>
+                    </div>
+                </form>
+            </div>
+            <h1>Commentaires</h1>
+            <ul class="list-group">
+                <li *ngFor="let c of comment " class="list-group-item ">
+                    {{c.message}},
+                    <span class="badge badge-primary">{{c.date | date:'short'}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
